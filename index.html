@@ -731,13 +731,19 @@
      </div>
     </div>
    </section><!-- Photo Gallery (static) -->
-   <section id="gallery" class="py-12 lg:py-20 bg-[#0f172a]">
+   <section id="gallery" class="py-16 lg:py-24 bg-[#0f172a] border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="text-center mb-8">
-      <h2 class="text-2xl font-bold" style="font-family: 'Outfit', sans-serif;">Photo Gallery</h2>
-      <p class="text-gray-400">Images from our portfolio.</p>
+     <div class="text-center mb-12">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full glass text-xs font-medium text-blue-400 mb-4">
+       <span class="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
+       Our Work
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style="font-family: 'Outfit', sans-serif;">
+       <span class="text-white">Professional</span> <span class="gradient-text">Installations</span>
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">A showcase of our premium network installations and setups.</p>
      </div>
-     <div id="photo-gallery" class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+     <div id="photo-gallery" class="card-hover"></div>
     </div>
    </section>
 
@@ -767,12 +773,30 @@
      const photos = PHOTO_LIST.map(f => ({ src: 'assets/images/' + encodeURIComponent(f), alt: f.replace(/\.[^.]+$/,'') }));
 
      photos.forEach((p, i)=>{
-      const card = document.createElement('div'); card.className = 'gallery-card';
-      const img = document.createElement('img'); img.src = p.src; img.alt = p.alt; img.className = 'w-full h-48 object-cover block cursor-pointer'; img.tabIndex = 0;
-      img.addEventListener('click', ()=> openLightbox(i));
-      img.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') openLightbox(i); });
+      const card = document.createElement('div');
+      card.className = 'gallery-card';
+      card.style.aspectRatio = '1';
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      
+      const img = document.createElement('img');
+      img.src = p.src;
+      img.alt = p.alt;
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;';
+      img.loading = 'lazy';
+      
+      const openHandler = ()=> openLightbox(i);
+      img.addEventListener('click', openHandler);
+      card.addEventListener('click', openHandler);
+      card.addEventListener('keyup', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+      
       card.appendChild(img);
-      const cap = document.createElement('div'); cap.className = 'gallery-caption'; cap.textContent = p.alt; card.appendChild(cap);
+      
+      const cap = document.createElement('div');
+      cap.className = 'gallery-caption';
+      cap.textContent = p.alt;
+      card.appendChild(cap);
+      
       gallery.appendChild(card);
      });
 
@@ -782,14 +806,43 @@
      const lbCap = lb.querySelector('.lightbox-caption');
      let current = -1;
 
-     function openLightbox(i){ current = i; lbImg.src = photos[i].src; lbImg.alt = photos[i].alt; lbCap.textContent = photos[i].alt; lb.classList.add('show'); lb.setAttribute('aria-hidden','false'); }
-     function closeLightbox(){ lb.classList.remove('show'); lb.setAttribute('aria-hidden','true'); current = -1; }
-     function nav(step){ if(current < 0) return; const next = (current + step + photos.length) % photos.length; openLightbox(next); }
+     function openLightbox(i){
+      current = i;
+      lbImg.src = photos[i].src;
+      lbImg.alt = photos[i].alt;
+      lbCap.textContent = photos[i].alt;
+      lb.classList.add('show');
+      lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+     }
+     
+     function closeLightbox(){
+      lb.classList.remove('show');
+      lb.setAttribute('aria-hidden','true');
+      current = -1;
+      document.body.style.overflow = '';
+     }
+     
+     function nav(step){
+      if(current < 0) return;
+      const next = (current + step + photos.length) % photos.length;
+      openLightbox(next);
+     }
 
      lb.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
      lb.querySelector('.lightbox-prev').addEventListener('click', ()=>nav(-1));
      lb.querySelector('.lightbox-next').addEventListener('click', ()=>nav(1));
-     document.addEventListener('keydown', (e)=>{ if(!lb.classList.contains('show')) return; if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowLeft') nav(-1); if(e.key==='ArrowRight') nav(1); });
+     
+     // Close lightbox when clicking outside content
+     lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLightbox(); });
+     
+     // Keyboard navigation
+     document.addEventListener('keydown', (e)=>{
+      if(!lb.classList.contains('show')) return;
+      if(e.key==='Escape') closeLightbox();
+      if(e.key==='ArrowLeft') nav(-1);
+      if(e.key==='ArrowRight') nav(1);
+     });
     })();
    </script>
 
