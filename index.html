@@ -1011,34 +1011,12 @@
                 <div>Total: <span id="cart-total">$0.00</span></div>
                 <div style="display:flex;gap:8px;align-items:center;">
                     <button id="send-inquiry-btn" class="primary">Send Inquiry via WhatsApp</button>
-                    <button id="checkout-btn" class="primary">Checkout</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="checkout-modal" class="modal hidden">
-        <div class="modal-content">
-            <button class="close" id="close-checkout">×</button>
-            <h2>Checkout</h2>
-            <form id="checkout-form">
-                <label>Name <input name="name" required></label>
-                <label>Email <input name="email" type="email" required></label>
-                <div class="checkout-actions">
-                    <button type="submit" class="primary">Pay / Place Order</button>
-                </div>
-            </form>
-            <div id="checkout-note" class="checkout-note">Payments: simulated locally. To enable real payments, add the optional Node/Stripe backend (see README).</div>
-        </div>
-    </div>
 
-    <div id="order-confirm" class="modal hidden">
-        <div class="modal-content">
-            <h2>Order Confirmed</h2>
-            <p id="order-message">Thank you — your order was placed.</p>
-            <button id="close-order" class="primary">Close</button>
-        </div>
-    </div>
 
     <script>
                 // Default configuration

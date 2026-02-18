@@ -101,43 +101,10 @@
   function wireUI(){
     const cartBtn = document.getElementById('cart-button');
     const closeCart = document.getElementById('close-cart');
-    const checkoutBtn = document.getElementById('checkout-btn');
-    const closeCheckout = document.getElementById('close-checkout');
-    const checkoutForm = document.getElementById('checkout-form');
-    const closeOrder = document.getElementById('close-order');
     const sendInquiryBtn = document.getElementById('send-inquiry-btn');
 
     if(cartBtn) cartBtn.addEventListener('click', ()=>{ renderCartModal(); openModal('cart-modal'); });
     if(closeCart) closeCart.addEventListener('click', ()=>closeModal('cart-modal'));
-    if(checkoutBtn) checkoutBtn.addEventListener('click', ()=>{ closeModal('cart-modal'); openModal('checkout-modal'); });
-    if(closeCheckout) closeCheckout.addEventListener('click', ()=>closeModal('checkout-modal'));
-    if(closeOrder) closeOrder.addEventListener('click', ()=>closeModal('order-confirm'));
-
-    if(checkoutForm) checkoutForm.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const form = new FormData(checkoutForm);
-      const name = form.get('name'); const email = form.get('email');
-      const cart = getCart(); if(cart.length===0){ alert('Cart empty'); return; }
-
-      // Try server-side Stripe checkout if available
-      try{
-        const resp = await fetch('/create-checkout-session', {
-          method:'POST', headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({items: cart, customer:{name,email}})
-        });
-        if(resp.ok){ const j = await resp.json(); if(j.url){ window.location.href = j.url; return; } }
-      }catch(e){ console.info('Stripe backend not available, falling back to simulated checkout'); }
-
-      // Simulate order placement
-      const orders = JSON.parse(localStorage.getItem('cplink_orders_v1')||'[]');
-      orders.push({ id: 'ORD-'+Date.now(), name, email, items:cart, total: cart.reduce((s,i)=>s+i.price_cents*i.qty,0), created: new Date().toISOString() });
-      localStorage.setItem('cplink_orders_v1', JSON.stringify(orders));
-      localStorage.removeItem(CART_KEY);
-      renderCartCount(); closeModal('checkout-modal');
-      document.getElementById('order-message').textContent = `Thank you ${name}. Your order was placed (simulated).`;
-      openModal('order-confirm');
-    });
-
     if(sendInquiryBtn) sendInquiryBtn.addEventListener('click', ()=>{
       sendInquiryToWhatsApp();
     });
