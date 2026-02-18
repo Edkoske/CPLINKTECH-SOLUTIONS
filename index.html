@@ -1211,12 +1211,13 @@
 
     <script>
         // Inline fallback list so gallery works without a server
-        window.__PHOTO_LIST = [
-          "cplink (10).png","cplink (11).png","cplink (12).png","cplink (14).png","cplink (15).png",
-          "cplink (16).png","cplink (17).png","cplink (18).png","cplink (19).png","cplink (2).png",
-          "cplink (3).png","cplink (4).png","cplink (5).png","cplink (6).png","cplink (7).png",
-          "cplink (8).png","cplink (9).png","profile.png","profile2.png"
-        ];
+                // Use images from the `assets/images` folder
+                window.__PHOTO_LIST = [
+                    "cplink (10).png","cplink (11).png","cplink (12).png","cplink (13).png","cplink (14).png",
+                    "cplink (15).png","cplink (16).png","cplink (17).png","cplink (18).png","cplink (19).png",
+                    "cplink (2).png","cplink (3).png","cplink (4).png","cplink (5).png","cplink (6).png",
+                    "cplink (7).png","cplink (8).png","cplink (9).png","profile.png"
+                ];
 
         (function(){
             async function tryFetch(url){
@@ -1233,13 +1234,10 @@
                 const gallery = document.getElementById('photo-gallery');
                 if(!gallery) return;
 
-                // 1) Try server endpoint (if user runs Node server)
+                // 1) Try server endpoint (if user runs a server)
                 let photos = await tryFetch('/photos');
 
-                // 2) Try local JSON file (works when served or some file setups)
-                if(!photos) photos = await tryFetch('./assets/photos/photos.json');
-
-                // 3) Fallback to inline list
+                // 2) Fallback to the inline list when no server is available
                 if(!photos || photos.length === 0) photos = window.__PHOTO_LIST || [];
 
                 if(!photos || photos.length === 0){
@@ -1257,7 +1255,7 @@
                         const b = document.createElement('div');
                         b.className = 'flex flex-col items-center';
                         const im = document.createElement('img');
-                        im.src = 'assets/photos/' + encodeURIComponent(fname);
+                        im.src = 'assets/images/' + encodeURIComponent(fname);
                         im.alt = fname;
                         im.className = 'rounded-full w-24 h-24 object-cover border-2 border-white/10';
                         const label = document.createElement('div');
@@ -1273,7 +1271,7 @@
                     const wrapper = document.createElement('div');
                     wrapper.className = 'overflow-hidden rounded-lg';
                     const img = document.createElement('img');
-                    img.src = 'assets/photos/' + encodeURIComponent(fname);
+                    img.src = 'assets/images/' + encodeURIComponent(fname);
                     img.alt = fname;
                     img.className = 'w-full h-48 object-cover block';
                     wrapper.appendChild(img);

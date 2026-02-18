@@ -3,16 +3,11 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const path = require('path');
-const fs = require('fs');
 require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
-// Serve static files (so images under /assets/photos are accessible)
-app.use(express.static(path.join(__dirname)));
 
 const stripeKey = process.env.STRIPE_SECRET_KEY;
 if(!stripeKey){
@@ -44,15 +39,6 @@ app.post('/create-checkout-session', async (req, res) => {
   }
 });
 
-// Return a list of photo filenames from assets/photos
-app.get('/photos', (req, res) => {
-  const photosDir = path.join(__dirname, 'assets', 'photos');
-  fs.readdir(photosDir, (err, files) => {
-    if (err) return res.status(500).json({ error: 'Unable to read photos directory' });
-    const images = (files || []).filter(f => /\.(jpe?g|png|gif|webp|avif|svg)$/i.test(f));
-    res.json(images);
-  });
-});
 
 const port = process.env.PORT || 3000;
 app.listen(port, ()=> console.log('Server running on port', port));
