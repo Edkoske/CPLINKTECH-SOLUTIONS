@@ -1256,61 +1256,48 @@
             });
         }
         
-        // Mobile menu toggle with smooth animation
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const closeIcon = document.getElementById('close-icon');
-
-        function toggleMobileMenu() {
-            if (!mobileMenuBtn || !mobileMenu) return;
+        // Mobile menu hamburger toggle
+        (function() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const hamburger = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
             
-            const isHidden = mobileMenu.classList.contains('hidden');
+            if (!btn || !menu) return;
             
-            if (isHidden) {
-                // Open menu
-                mobileMenu.classList.remove('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', 'true');
-                if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
-                if (closeIcon) closeIcon.classList.remove('hidden');
-            } else {
-                // Close menu
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
-                if (closeIcon) closeIcon.classList.add('hidden');
-            }
-        }
-        
-        function closeMobileMenu() {
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                if (mobileMenuBtn) {
-                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            function updateUI(isOpen) {
+                if (isOpen) {
+                    menu.classList.remove('hidden');
+                    btn.setAttribute('aria-expanded', 'true');
+                    if (hamburger) hamburger.classList.add('hidden');
+                    if (closeIcon) closeIcon.classList.remove('hidden');
+                } else {
+                    menu.classList.add('hidden');
+                    btn.setAttribute('aria-expanded', 'false');
+                    if (hamburger) hamburger.classList.remove('hidden');
+                    if (closeIcon) closeIcon.classList.add('hidden');
                 }
-                if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
-                if (closeIcon) closeIcon.classList.add('hidden');
             }
-        }
-
-        // Hamburger button click
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-        }
-        
-        // Close menu when clicking a link
-        if (mobileMenu) {
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
+            
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isHidden = menu.classList.contains('hidden');
+                updateUI(isHidden);
             });
-        }
-        
-        // Close menu on window resize to lg+ breakpoint
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1024) {
-                closeMobileMenu();
-            }
-        });
+            
+            menu.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    updateUI(false);
+                }
+            });
+            
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1024) {
+                    updateUI(false);
+                }
+            });
+        })();
         
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
