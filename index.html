@@ -730,7 +730,70 @@
       </div>
      </div>
     </div>
-   </section><!-- Testimonials -->
+   </section><!-- Photo Gallery (static) -->
+   <section id="gallery" class="py-12 lg:py-20 bg-[#0f172a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-8">
+      <h2 class="text-2xl font-bold" style="font-family: 'Outfit', sans-serif;">Photo Gallery</h2>
+      <p class="text-gray-400">Images from our portfolio.</p>
+     </div>
+     <div id="photo-gallery" class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+    </div>
+   </section>
+
+   <!-- Lightbox -->
+   <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+     <button class="lightbox-close" aria-label="Close">×</button>
+     <button class="lightbox-nav lightbox-prev" aria-label="Previous">‹</button>
+     <img src="" alt="" />
+     <div class="lightbox-caption"></div>
+     <button class="lightbox-nav lightbox-next" aria-label="Next">›</button>
+    </div>
+   </div>
+
+   <script>
+    (function(){
+     const PHOTO_LIST = [
+      "cplink (10).png","cplink (11).png","cplink (12).png","cplink (13).png","cplink (14).png",
+      "cplink (15).png","cplink (16).png","cplink (17).png","cplink (18).png","cplink (19).png",
+      "cplink (2).png","cplink (3).png","cplink (4).png","cplink (5).png","cplink (6).png",
+      "cplink (7).png","cplink (8).png","cplink (9).png","profile.png"
+     ];
+
+     const gallery = document.getElementById('photo-gallery');
+     if(!gallery) return;
+
+     const photos = PHOTO_LIST.map(f => ({ src: 'assets/images/' + encodeURIComponent(f), alt: f.replace(/\.[^.]+$/,'') }));
+
+     photos.forEach((p, i)=>{
+      const card = document.createElement('div'); card.className = 'gallery-card';
+      const img = document.createElement('img'); img.src = p.src; img.alt = p.alt; img.className = 'w-full h-48 object-cover block cursor-pointer'; img.tabIndex = 0;
+      img.addEventListener('click', ()=> openLightbox(i));
+      img.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') openLightbox(i); });
+      card.appendChild(img);
+      const cap = document.createElement('div'); cap.className = 'gallery-caption'; cap.textContent = p.alt; card.appendChild(cap);
+      gallery.appendChild(card);
+     });
+
+     // Lightbox
+     const lb = document.getElementById('lightbox');
+     const lbImg = lb.querySelector('img');
+     const lbCap = lb.querySelector('.lightbox-caption');
+     let current = -1;
+
+     function openLightbox(i){ current = i; lbImg.src = photos[i].src; lbImg.alt = photos[i].alt; lbCap.textContent = photos[i].alt; lb.classList.add('show'); lb.setAttribute('aria-hidden','false'); }
+     function closeLightbox(){ lb.classList.remove('show'); lb.setAttribute('aria-hidden','true'); current = -1; }
+     function nav(step){ if(current < 0) return; const next = (current + step + photos.length) % photos.length; openLightbox(next); }
+
+     lb.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+     lb.querySelector('.lightbox-prev').addEventListener('click', ()=>nav(-1));
+     lb.querySelector('.lightbox-next').addEventListener('click', ()=>nav(1));
+     document.addEventListener('keydown', (e)=>{ if(!lb.classList.contains('show')) return; if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowLeft') nav(-1); if(e.key==='ArrowRight') nav(1); });
+    })();
+   </script>
+
+   <!-- Testimonials -->
    <section class="py-20 lg:py-32 bg-[#0f172a]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
      <div class="text-center mb-16"><span class="inline-flex items-center px-4 py-1.5 rounded-full glass text-xs font-medium text-blue-400 mb-4"> Client Testimonials </span>
@@ -910,7 +973,7 @@
        </div>
       </div><!-- Contact Form -->
       <div class="glass-card rounded-2xl p-8">
-       <form id="contact-form" class="space-y-6">
+             <form id="contact-form" class="space-y-6">
         <div class="grid sm:grid-cols-2 gap-6">
          <div><label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors" placeholder="John Doe">
          </div>
