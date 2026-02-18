@@ -239,29 +239,10 @@
        </div>
       </div><!-- Hero Visual -->
       <div class="relative hidden lg:block">
-       <div class="relative"><!-- Main Device Illustration -->
-        <div class="glass-card rounded-3xl p-8 glow floating-element">
-         <div class="aspect-square relative"><!-- Router/Network Device SVG -->
-          <svg viewbox="0 0 200 200" class="w-full h-full"><defs>
-            <lineargradient id="deviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-             <stop offset="0%" style="stop-color:#3b82f6" />
-             <stop offset="100%" style="stop-color:#1d4ed8" />
-            </lineargradient>
-            <filter id="glow">
-             <fegaussianblur stddeviation="3" result="coloredBlur" />
-             <femerge>
-              <femergenode in="coloredBlur" />
-              <femergenode in="SourceGraphic" />
-             </femerge>
-            </filter>
-           </defs> <!-- Signal Waves --> <circle cx="100" cy="100" r="80" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.3" class="pulse-ring" /> <circle cx="100" cy="100" r="60" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.4" class="pulse-ring" style="animation-delay: 0.5s;" /> <circle cx="100" cy="100" r="40" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.5" class="pulse-ring" style="animation-delay: 1s;" /> <!-- Central Router --> <rect x="60" y="80" width="80" height="40" rx="8" fill="url(#deviceGrad)" filter="url(#glow)" /> <circle cx="75" cy="100" r="4" fill="#60a5fa" class="animate-pulse" /> <circle cx="90" cy="100" r="4" fill="#34d399" class="animate-pulse" style="animation-delay: 0.2s;" /> <circle cx="105" cy="100" r="4" fill="#60a5fa" class="animate-pulse" style="animation-delay: 0.4s;" /> <rect x="115" y="94" width="15" height="12" rx="2" fill="rgba(255,255,255,0.2)" /> <!-- Antennas --> <rect x="70" y="55" width="4" height="25" rx="2" fill="#60a5fa" /> <rect x="95" y="50" width="4" height="30" rx="2" fill="#60a5fa" /> <rect x="120" y="55" width="4" height="25" rx="2" fill="#60a5fa" /> <!-- Connection Lines --> <line x1="100" y1="120" x2="100" y2="150" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4">
-            <animate attributename="stroke-dashoffset" from="8" to="0" dur="1s" repeatcount="indefinite" />
-           </line> <line x1="60" y1="100" x2="30" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4">
-            <animate attributename="stroke-dashoffset" from="8" to="0" dur="1s" repeatcount="indefinite" />
-           </line> <line x1="140" y1="100" x2="170" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4">
-            <animate attributename="stroke-dashoffset" from="8" to="0" dur="1s" repeatcount="indefinite" />
-           </line> <!-- Connected Devices --> <rect x="85" y="150" width="30" height="20" rx="3" fill="#1e3a5f" /> <rect x="15" y="90" width="20" height="20" rx="3" fill="#1e3a5f" /> <rect x="165" y="90" width="20" height="20" rx="3" fill="#1e3a5f" />
-          </svg>
+       <div class="relative"><!-- Installation Package Image -->
+        <div class="glass-card rounded-3xl p-8 glow floating-element overflow-hidden">
+         <div class="aspect-square relative">
+          <img src="assets/images/Installation%20package%20list.png" alt="Installation Package" class="w-full h-full object-cover rounded-2xl" />
          </div>
         </div><!-- Floating Stats Cards -->
         <div class="absolute -top-4 -right-4 glass-card rounded-xl p-4 animate-pulse">
