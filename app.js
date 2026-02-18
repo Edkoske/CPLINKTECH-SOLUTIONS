@@ -82,20 +82,12 @@
       const footer = card.querySelector('.p-6') || card;
       if(footer.querySelector('.price-row')) return; // already injected
       const priceRow = document.createElement('div'); priceRow.className='price-row';
-      priceRow.innerHTML = `<div style="margin-top:8px;display:flex;align-items:center;justify-content:space-between"><div style="font-weight:700">${centsToStr(product.price_cents)}</div><div><button class="primary add-btn" data-id="${product.id}" data-name="${encodeURIComponent(product.name)}">Add to cart</button></div></div>`;
+      const whatsappMsg = encodeURIComponent(`Hi CPLINKTECH,\n\nI'm interested in: ${product.name}\nPrice: ${centsToStr(product.price_cents)}\n\nPlease provide more details.`);
+      const whatsappLink = `https://wa.me/254700000000?text=${whatsappMsg}`;
+      priceRow.innerHTML = `<div style="margin-top:8px;display:flex;align-items:center;justify-content:space-between"><div style="font-weight:700">${centsToStr(product.price_cents)}</div><div><a href="${whatsappLink}" target="_blank" class="primary" style="display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;cursor:pointer;text-align:center">Inquire on WhatsApp</a></div></div>`;
       footer.appendChild(priceRow);
     });
 
-    // wire add-to-cart
-    document.addEventListener('click', (ev)=>{
-      const btn = ev.target.closest('button.add-btn'); if(!btn) return;
-      const id = btn.dataset.id; const name = decodeURIComponent(btn.dataset.name || 'Product');
-      const product = productsMap[name] || { id, name, price_cents: 1500000 };
-      addToCart(product);
-      renderCartModal();
-      // brief confirmation
-      btn.textContent = 'Added ✓'; setTimeout(()=>btn.textContent='Add to cart',800);
-    });
   }
 
   function wireUI(){
