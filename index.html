@@ -1285,7 +1285,9 @@
         function closeMobileMenu() {
             if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                }
                 if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
                 if (closeIcon) closeIcon.classList.add('hidden');
             }
