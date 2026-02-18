@@ -177,18 +177,20 @@
         </svg>
     </div><span id="nav-company-name" class="text-xl font-bold tracking-tight" style="font-family: 'Outfit', sans-serif;">CPLINKTECH SOLUTIONS</span>
       </div>
-      <div class="hidden lg:flex items-center space-x-8"><a href="#home" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a> <a href="#products" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Products</a> <a href="#services" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Services</a> <a href="#why-us" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Why Us</a> <a href="#projects" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a> <a href="#contact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+    <div class="hidden lg:flex items-center space-x-8"><a href="#home" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a> <a href="#products" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Products</a> <a href="#services" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Services</a> <a href="#why-us" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Why Us</a> <a href="#projects" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a> <a href="#gallery" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Photo Gallery</a> <a href="#contact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
       </div>
-    <div class="hidden lg:flex items-center space-x-4">
-     <div id="cart-button" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors cursor-pointer">Cart (<span id="cart-count">0</span>)</div>
-     <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">Get Quote</a>
-    </div><button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg glass">
-       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-       </svg></button>
+     <div class="hidden lg:flex items-center space-x-4">
+      <div id="cart-button" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors cursor-pointer">Cart (<span id="cart-count">0</span>)</div>
+      <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">Get Quote</a>
+     </div>
+     <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle menu" class="lg:hidden p-2 rounded-lg glass">
+         <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+         <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+     </button>
      </div>
     </div><!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10">
-     <div class="px-4 py-4 space-y-3"><a href="#home" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Home</a> <a href="#products" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Products</a> <a href="#services" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Services</a> <a href="#why-us" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Why Us</a> <a href="#projects" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Projects</a> <a href="#contact" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Contact</a> <a href="#contact" class="block btn-primary px-4 py-2 rounded-lg text-center font-semibold">Get Quote</a>
+     <div class="px-4 py-4 space-y-3"><a href="#home" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Home</a> <a href="#products" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Products</a> <a href="#services" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Services</a> <a href="#why-us" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Why Us</a> <a href="#projects" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Projects</a> <a href="#gallery" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Photo Gallery</a> <a href="#contact" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Contact</a> <a href="#contact" class="block btn-primary px-4 py-2 rounded-lg text-center font-semibold">Get Quote</a>
      </div>
     </div>
    </nav><!-- Hero Section -->
@@ -1138,13 +1140,23 @@
             });
         }
         
-        // Mobile menu toggle
+        // Mobile menu toggle (improved): toggles visibility, aria-expanded, and icon
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if(mobileMenuBtn && mobileMenu){
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+                if(hamburgerIcon && closeIcon){
+                    hamburgerIcon.classList.toggle('hidden', isOpen);
+                    closeIcon.classList.toggle('hidden', !isOpen);
+                }
+            });
+        }
         
         // Close mobile menu when clicking a link
         mobileMenu.querySelectorAll('a').forEach(link => {
