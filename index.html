@@ -767,10 +767,36 @@
       "cplink (7).png","cplink (8).png","cplink (9).png","profile.png"
      ];
 
+     const CAPTIONS = {
+      "cplink (10).png": "Advanced WiFi Infrastructure",
+      "cplink (11).png": "Enterprise Network Setup",
+      "cplink (12).png": "Mesh WiFi Deployment",
+      "cplink (13).png": "Access Point Configuration",
+      "cplink (14).png": "Network Cabling Solutions",
+      "cplink (15).png": "Server Room Integration",
+      "cplink (16).png": "Fiber Optic Installation",
+      "cplink (17).png": "Outdoor Coverage System",
+      "cplink (18).png": "Network Monitoring Station",
+      "cplink (19).png": "System Architecture Design",
+      "cplink (2).png": "Residential WiFi Coverage",
+      "cplink (3).png": "Commercial Office Setup",
+      "cplink (4).png": "Indoor Network Optimization",
+      "cplink (5).png": "Multi-Floor Installation",
+      "cplink (6).png": "Coverage Testing & Verification",
+      "cplink (7).png": "Equipment Mounting & Installation",
+      "cplink (8).png": "Network Performance Analysis",
+      "cplink (9).png": "Professional Installation Team",
+      "profile.png": "CPLINKTECH Solutions Team"
+     };
+
      const gallery = document.getElementById('photo-gallery');
      if(!gallery) return;
 
-     const photos = PHOTO_LIST.map(f => ({ src: 'assets/images/' + encodeURIComponent(f), alt: f.replace(/\.[^.]+$/,'') }));
+     const photos = PHOTO_LIST.map(f => ({ 
+      src: 'assets/images/' + encodeURIComponent(f), 
+      alt: f.replace(/\.[^.]+$/,''),
+      caption: CAPTIONS[f] || f.replace(/\.[^.]+$/,'')
+     }));
 
      photos.forEach((p, i)=>{
       const card = document.createElement('div');
@@ -794,7 +820,7 @@
       
       const cap = document.createElement('div');
       cap.className = 'gallery-caption';
-      cap.textContent = p.alt;
+      cap.textContent = p.caption;
       card.appendChild(cap);
       
       gallery.appendChild(card);
@@ -810,7 +836,7 @@
       current = i;
       lbImg.src = photos[i].src;
       lbImg.alt = photos[i].alt;
-      lbCap.textContent = photos[i].alt;
+      lbCap.textContent = photos[i].caption;
       lb.classList.add('show');
       lb.setAttribute('aria-hidden','false');
       document.body.style.overflow = 'hidden';
