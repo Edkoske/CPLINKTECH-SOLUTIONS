@@ -2,31 +2,31 @@
   {
     "id": "high-performance-routers",
     "name": "High-Performance Routers",
-    "price_cents": 2450000
+    "price_cents": 3800000
   },
   {
     "id": "mesh-wifi-systems",
     "name": "Mesh WiFi Systems",
-    "price_cents": 1850000
+    "price_cents": 3200000
   },
   {
     "id": "access-points",
     "name": "Access Points",
-    "price_cents": 1200000
+    "price_cents": 1900000
   },
   {
     "id": "network-switches",
     "name": "Network Switches",
-    "price_cents": 950000
+    "price_cents": 1450000
   },
   {
     "id": "cabling-installation",
     "name": "Cabling & Installation",
-    "price_cents": 1500000
+    "price_cents": 2200000
   },
   {
     "id": "security-appliances",
     "name": "Security Appliances",
-    "price_cents": 2800000
+    "price_cents": 4500000
   }
 ]

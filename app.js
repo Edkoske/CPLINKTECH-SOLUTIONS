@@ -77,7 +77,7 @@
       const titleEl = card.querySelector('h3');
       if(!titleEl) return;
       const name = titleEl.textContent.trim();
-      const product = productsMap[name] || { id: name.toLowerCase().replace(/\s+/g,'-'), name, price_cents: 19900 };
+      const product = productsMap[name] || { id: name.toLowerCase().replace(/\s+/g,'-'), name, price_cents: 1500000 };
       // add price display and button
       const footer = card.querySelector('.p-6') || card;
       if(footer.querySelector('.price-row')) return; // already injected
@@ -90,7 +90,7 @@
     document.addEventListener('click', (ev)=>{
       const btn = ev.target.closest('button.add-btn'); if(!btn) return;
       const id = btn.dataset.id; const name = decodeURIComponent(btn.dataset.name || 'Product');
-      const product = productsMap[name] || { id, name, price_cents: 19900 };
+      const product = productsMap[name] || { id, name, price_cents: 1500000 };
       addToCart(product);
       renderCartModal();
       // brief confirmation
