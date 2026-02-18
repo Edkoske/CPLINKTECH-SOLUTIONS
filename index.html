@@ -808,8 +808,14 @@
       const img = document.createElement('img');
       img.src = p.src;
       img.alt = p.alt;
-      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;background:rgba(59,130,246,0.1);';
       img.loading = 'lazy';
+      
+      // Error handling - show placeholder if image fails
+      img.onerror = function() {
+        this.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(30,58,138,0.15) 100%)';
+        this.style.opacity = '0.5';
+      };
       
       const openHandler = ()=> openLightbox(i);
       img.addEventListener('click', openHandler);
