@@ -183,14 +183,14 @@
       <div id="cart-button" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors cursor-pointer">Cart (<span id="cart-count">0</span>)</div>
       <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">Get Quote</a>
      </div>
-     <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle menu" class="lg:hidden p-2 rounded-lg glass">
-         <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
-         <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+     <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="lg:hidden p-2.5 rounded-lg glass hover:bg-white/10 transition-all active:scale-95">
+         <svg id="hamburger-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+         <svg id="close-icon" class="w-6 h-6 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
      </button>
      </div>
     </div><!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10">
-     <div class="px-4 py-4 space-y-3"><a href="#home" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Home</a> <a href="#products" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Products</a> <a href="#services" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Services</a> <a href="#why-us" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Why Us</a> <a href="#projects" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Projects</a> <a href="#gallery" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Photo Gallery</a> <a href="#contact" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Contact</a> <a href="#contact" class="block btn-primary px-4 py-2 rounded-lg text-center font-semibold">Get Quote</a>
+     <div class="px-4 py-4 space-y-2"><a href="#home" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">Home</a> <a href="#products" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">Products</a> <a href="#services" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">Services</a> <a href="#why-us" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">Why Us</a> <a href="#projects" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">Projects</a> <a href="#gallery" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">Photo Gallery</a> <a href="#contact" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">Contact</a> <div class="pt-2 border-t border-white/5"><a href="#contact" class="block btn-primary px-4 py-3 rounded-lg text-center font-semibold text-sm mt-2">Get Quote</a></div>
      </div>
     </div>
    </nav><!-- Hero Section -->
@@ -1256,29 +1256,58 @@
             });
         }
         
-        // Mobile menu toggle (improved): toggles visibility, aria-expanded, and icon
+        // Mobile menu toggle with smooth animation
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const hamburgerIcon = document.getElementById('hamburger-icon');
         const closeIcon = document.getElementById('close-icon');
 
-        if(mobileMenuBtn && mobileMenu){
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const isOpen = !mobileMenu.classList.contains('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
-                if(hamburgerIcon && closeIcon){
-                    hamburgerIcon.classList.toggle('hidden', isOpen);
-                    closeIcon.classList.toggle('hidden', !isOpen);
-                }
+        function toggleMobileMenu() {
+            if (!mobileMenuBtn || !mobileMenu) return;
+            
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                // Open menu
+                mobileMenu.classList.remove('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
+                if (closeIcon) closeIcon.classList.remove('hidden');
+            } else {
+                // Close menu
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+                if (closeIcon) closeIcon.classList.add('hidden');
+            }
+        }
+        
+        function closeMobileMenu() {
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+                if (closeIcon) closeIcon.classList.add('hidden');
+            }
+        }
+
+        // Hamburger button click
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        }
+        
+        // Close menu when clicking a link
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
             });
         }
         
-        // Close mobile menu when clicking a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+        // Close menu on window resize to lg+ breakpoint
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                closeMobileMenu();
+            }
         });
         
         // Navbar scroll effect
