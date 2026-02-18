@@ -1,0 +1,9 @@
+[
+  { "id": "router-1", "name": "High-Performance Routers", "price_cents": 3500000 },
+  { "id": "mesh-1", "name": "Mesh WiFi Systems", "price_cents": 5000000 },
+  { "id": "ap-1", "name": "Access Points", "price_cents": 1200000 },
+  { "id": "switch-1", "name": "Network Switches", "price_cents": 4500000 },
+  { "id": "cable-1", "name": "Fiber & Ethernet", "price_cents": 250000 },
+  { "id": "rack-1", "name": "Server Racks & Cabinets", "price_cents": 12000000 }
+]
+

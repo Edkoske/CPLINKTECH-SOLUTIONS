@@ -1,0 +1,1289 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPLINKTECH SOLUTIONS - Premium WiFi &amp; Network Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #3b82f6 #0f172a;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1d4ed8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-gradient {
+            background: radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom left, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
+                        linear-gradient(180deg, #0a0f1c 0%, #0f172a 100%);
+        }
+        
+        .network-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(30, 58, 138, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 60%);
+        }
+        
+        .glow {
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.3), 0 0 80px rgba(59, 130, 246, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-ring {
+            animation: pulse-ring 2s ease-out infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .section-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+ </head>
+ <body class="h-full bg-[#0a0f1c] text-white overflow-x-hidden">
+  <div id="app-wrapper" class="h-full overflow-auto scroll-smooth"><!-- Navigation -->
+   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex items-center justify-between h-16 lg:h-20">
+      <div class="flex items-center space-x-3">
+       <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center glow">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+        </svg>
+    </div><span id="nav-company-name" class="text-xl font-bold tracking-tight" style="font-family: 'Outfit', sans-serif;">CPLINKTECH SOLUTIONS</span>
+      </div>
+      <div class="hidden lg:flex items-center space-x-8"><a href="#home" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a> <a href="#products" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Products</a> <a href="#services" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Services</a> <a href="#why-us" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Why Us</a> <a href="#projects" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a> <a href="#contact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+      </div>
+    <div class="hidden lg:flex items-center space-x-4">
+     <div id="cart-button" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors cursor-pointer">Cart (<span id="cart-count">0</span>)</div>
+     <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">Get Quote</a>
+    </div><button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg glass">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10">
+     <div class="px-4 py-4 space-y-3"><a href="#home" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Home</a> <a href="#products" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Products</a> <a href="#services" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Services</a> <a href="#why-us" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Why Us</a> <a href="#projects" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Projects</a> <a href="#contact" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">Contact</a> <a href="#contact" class="block btn-primary px-4 py-2 rounded-lg text-center font-semibold">Get Quote</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="home" class="relative min-h-screen hero-gradient network-pattern flex items-center pt-20"><!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl floating-element"></div>
+     <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-700/10 rounded-full blur-3xl floating-element" style="animation-delay: -3s;"></div><!-- Network Lines SVG -->
+     <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg"><defs>
+       <lineargradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.5" />
+        <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:0" />
+       </lineargradient>
+      </defs> <line x1="10%" y1="20%" x2="40%" y2="60%" stroke="url(#lineGrad)" stroke-width="1" /> <line x1="60%" y1="10%" x2="90%" y2="50%" stroke="url(#lineGrad)" stroke-width="1" /> <line x1="20%" y1="80%" x2="50%" y2="40%" stroke="url(#lineGrad)" stroke-width="1" /> <line x1="70%" y1="90%" x2="95%" y2="60%" stroke="url(#lineGrad)" stroke-width="1" /> <circle cx="10%" cy="20%" r="3" fill="#3b82f6" opacity="0.6" /> <circle cx="40%" cy="60%" r="4" fill="#60a5fa" opacity="0.8" /> <circle cx="60%" cy="10%" r="3" fill="#3b82f6" opacity="0.6" /> <circle cx="90%" cy="50%" r="5" fill="#60a5fa" opacity="0.7" /> <circle cx="20%" cy="80%" r="4" fill="#3b82f6" opacity="0.5" /> <circle cx="70%" cy="90%" r="3" fill="#60a5fa" opacity="0.6" />
+     </svg>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div class="text-center lg:text-left">
+       <div class="section-fade"><span class="inline-flex items-center px-4 py-1.5 rounded-full glass text-xs font-medium text-blue-400 mb-6"> <span class="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span> Enterprise-Grade Solutions </span>
+       </div>
+       <h1 id="hero-headline" class="section-fade stagger-1 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6" style="font-family: 'Outfit', sans-serif;"><span class="text-white">Reliable Connectivity.</span> <br><span class="gradient-text">Premium Network Solutions.</span></h1>
+       <p id="hero-subheadline" class="section-fade stagger-2 text-lg sm:text-xl text-gray-400 mb-10 max-w-xl mx-auto lg:mx-0" style="font-family: 'Inter', sans-serif;">Expert WiFi equipment, professional installation, and seamless coverage for homes, offices, and enterprises.</p>
+       <div class="section-fade stagger-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12"><a href="#contact" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center space-x-2"> <span>Request Installation</span>
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+         </svg></a> <a href="#contact" class="btn-secondary w-full sm:w-auto px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center space-x-2"> <span>Get a Quote</span> </a>
+       </div><!-- Trust Badges -->
+       <div class="section-fade stagger-4 grid grid-cols-3 gap-4">
+        <div class="glass-card rounded-xl p-4 text-center">
+         <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-blue-500/20 flex items-center justify-center">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+         </div><span class="text-xs font-medium text-gray-300">Certified Technicians</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 text-center">
+         <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-blue-500/20 flex items-center justify-center">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+         </div><span class="text-xs font-medium text-gray-300">Enterprise Hardware</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 text-center">
+         <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-blue-500/20 flex items-center justify-center">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+          </svg>
+         </div><span class="text-xs font-medium text-gray-300">Guaranteed Coverage</span>
+        </div>
+       </div>
+      </div><!-- Hero Visual -->
+      <div class="relative hidden lg:block">
+       <div class="relative"><!-- Main Device Illustration -->
+        <div class="glass-card rounded-3xl p-8 glow floating-element">
+         <div class="aspect-square relative"><!-- Router/Network Device SVG -->
+          <svg viewbox="0 0 200 200" class="w-full h-full"><defs>
+            <lineargradient id="deviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+             <stop offset="0%" style="stop-color:#3b82f6" />
+             <stop offset="100%" style="stop-color:#1d4ed8" />
+            </lineargradient>
+            <filter id="glow">
+             <fegaussianblur stddeviation="3" result="coloredBlur" />
+             <femerge>
+              <femergenode in="coloredBlur" />
+              <femergenode in="SourceGraphic" />
+             </femerge>
+            </filter>
+           </defs> <!-- Signal Waves --> <circle cx="100" cy="100" r="80" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.3" class="pulse-ring" /> <circle cx="100" cy="100" r="60" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.4" class="pulse-ring" style="animation-delay: 0.5s;" /> <circle cx="100" cy="100" r="40" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.5" class="pulse-ring" style="animation-delay: 1s;" /> <!-- Central Router --> <rect x="60" y="80" width="80" height="40" rx="8" fill="url(#deviceGrad)" filter="url(#glow)" /> <circle cx="75" cy="100" r="4" fill="#60a5fa" class="animate-pulse" /> <circle cx="90" cy="100" r="4" fill="#34d399" class="animate-pulse" style="animation-delay: 0.2s;" /> <circle cx="105" cy="100" r="4" fill="#60a5fa" class="animate-pulse" style="animation-delay: 0.4s;" /> <rect x="115" y="94" width="15" height="12" rx="2" fill="rgba(255,255,255,0.2)" /> <!-- Antennas --> <rect x="70" y="55" width="4" height="25" rx="2" fill="#60a5fa" /> <rect x="95" y="50" width="4" height="30" rx="2" fill="#60a5fa" /> <rect x="120" y="55" width="4" height="25" rx="2" fill="#60a5fa" /> <!-- Connection Lines --> <line x1="100" y1="120" x2="100" y2="150" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4">
+            <animate attributename="stroke-dashoffset" from="8" to="0" dur="1s" repeatcount="indefinite" />
+           </line> <line x1="60" y1="100" x2="30" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4">
+            <animate attributename="stroke-dashoffset" from="8" to="0" dur="1s" repeatcount="indefinite" />
+           </line> <line x1="140" y1="100" x2="170" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4">
+            <animate attributename="stroke-dashoffset" from="8" to="0" dur="1s" repeatcount="indefinite" />
+           </line> <!-- Connected Devices --> <rect x="85" y="150" width="30" height="20" rx="3" fill="#1e3a5f" /> <rect x="15" y="90" width="20" height="20" rx="3" fill="#1e3a5f" /> <rect x="165" y="90" width="20" height="20" rx="3" fill="#1e3a5f" />
+          </svg>
+         </div>
+        </div><!-- Floating Stats Cards -->
+        <div class="absolute -top-4 -right-4 glass-card rounded-xl p-4 animate-pulse">
+         <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center">
+           <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+           </svg>
+          </div>
+          <div>
+           <div class="text-xs text-gray-400">
+            Speed
+           </div>
+           <div class="text-sm font-bold text-white">
+            1 Gbps
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="absolute -bottom-4 -left-4 glass-card rounded-xl p-4">
+         <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
+           <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0" />
+           </svg>
+          </div>
+          <div>
+           <div class="text-xs text-gray-400">
+            Signal
+           </div>
+           <div class="text-sm font-bold text-white">
+            100%
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2"><a href="#products" class="flex flex-col items-center text-gray-400 hover:text-white transition-colors"> <span class="text-xs mb-2">Scroll to explore</span>
+      <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg></a>
+    </div>
+   </section><!-- Partner Logos -->
+   <section class="py-12 bg-gradient-to-b from-[#0a0f1c] to-[#0f172a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <p class="text-center text-sm text-gray-500 mb-8">Trusted Partners &amp; Premium Brands</p>
+     <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-16 opacity-60">
+      <div class="text-xl font-bold text-gray-400" style="font-family: 'Outfit', sans-serif;">
+       Ubiquiti
+      </div>
+      <div class="text-xl font-bold text-gray-400" style="font-family: 'Outfit', sans-serif;">
+       TP-Link
+      </div>
+      <div class="text-xl font-bold text-gray-400" style="font-family: 'Outfit', sans-serif;">
+       MikroTik
+      </div>
+      <div class="text-xl font-bold text-gray-400" style="font-family: 'Outfit', sans-serif;">
+       Cisco
+      </div>
+      <div class="text-xl font-bold text-gray-400" style="font-family: 'Outfit', sans-serif;">
+       Aruba
+      </div>
+     </div>
+    </div>
+   </section><!-- Products Section -->
+   <section id="products" class="py-20 lg:py-32 bg-[#0f172a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="inline-flex items-center px-4 py-1.5 rounded-full glass text-xs font-medium text-blue-400 mb-4"> Premium Equipment </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style="font-family: 'Outfit', sans-serif;"><span class="text-white">Enterprise-Grade</span> <span class="gradient-text"> Products</span></h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">Premium networking equipment selected for performance, reliability, and seamless integration.</p>
+     </div>
+     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"><!-- Product Card 1 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-blue-900/50 to-blue-950/50 p-8 flex items-center justify-center">
+        <svg class="w-32 h-32 text-blue-400 group-hover:scale-110 transition-transform" viewbox="0 0 100 100" fill="none"><rect x="15" y="40" width="70" height="30" rx="6" stroke="currentColor" stroke-width="2" /> <circle cx="30" cy="55" r="4" fill="currentColor" class="animate-pulse" /> <circle cx="45" cy="55" r="4" fill="#34d399" class="animate-pulse" /> <rect x="55" y="50" width="20" height="10" rx="2" stroke="currentColor" stroke-width="1.5" /> <rect x="25" y="25" width="4" height="15" rx="2" fill="currentColor" /> <rect x="48" y="20" width="4" height="20" rx="2" fill="currentColor" /> <rect x="71" y="25" width="4" height="15" rx="2" fill="currentColor" />
+        </svg>
+       </div>
+       <div class="p-6"><span class="text-xs font-medium text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">Home | Office</span>
+        <h3 class="text-xl font-bold mt-3 mb-2" style="font-family: 'Outfit', sans-serif;">High-Performance Routers</h3>
+        <p class="text-gray-400 text-sm mb-4">WiFi 6/6E routers with advanced security features and blazing speeds up to 10 Gbps.</p>
+        <ul class="space-y-2 text-sm text-gray-300">
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>WiFi 6E Support</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Advanced QoS</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Built-in VPN</li>
+        </ul>
+       </div>
+      </div><!-- Product Card 2 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-blue-900/50 to-blue-950/50 p-8 flex items-center justify-center">
+        <div class="flex space-x-4">
+         <svg class="w-20 h-20 text-blue-400 group-hover:scale-110 transition-transform" viewbox="0 0 60 60" fill="none"><rect x="10" y="15" width="40" height="30" rx="6" stroke="currentColor" stroke-width="2" /> <circle cx="30" cy="30" r="8" stroke="currentColor" stroke-width="2" /> <circle cx="30" cy="30" r="3" fill="currentColor" />
+         </svg>
+         <svg class="w-20 h-20 text-blue-300 group-hover:scale-110 transition-transform" viewbox="0 0 60 60" fill="none"><rect x="10" y="15" width="40" height="30" rx="6" stroke="currentColor" stroke-width="2" /> <circle cx="30" cy="30" r="8" stroke="currentColor" stroke-width="2" /> <circle cx="30" cy="30" r="3" fill="currentColor" />
+         </svg>
+        </div>
+       </div>
+       <div class="p-6"><span class="text-xs font-medium text-green-400 bg-green-500/10 px-3 py-1 rounded-full">Home | Enterprise</span>
+        <h3 class="text-xl font-bold mt-3 mb-2" style="font-family: 'Outfit', sans-serif;">Mesh WiFi Systems</h3>
+        <p class="text-gray-400 text-sm mb-4">Whole-home coverage with intelligent mesh technology for seamless roaming.</p>
+        <ul class="space-y-2 text-sm text-gray-300">
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Seamless Roaming</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Up to 6,000 sq ft</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Smart Band Steering</li>
+        </ul>
+       </div>
+      </div><!-- Product Card 3 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-blue-900/50 to-blue-950/50 p-8 flex items-center justify-center">
+        <svg class="w-32 h-32 text-blue-400 group-hover:scale-110 transition-transform" viewbox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="2" /> <circle cx="50" cy="50" r="25" stroke="currentColor" stroke-width="1.5" opacity="0.7" /> <circle cx="50" cy="50" r="15" stroke="currentColor" stroke-width="1" opacity="0.5" /> <circle cx="50" cy="50" r="6" fill="currentColor" /> <circle cx="50" cy="35" r="3" fill="#34d399" class="animate-pulse" /> <circle cx="65" cy="50" r="3" fill="currentColor" class="animate-pulse" /> <circle cx="50" cy="65" r="3" fill="currentColor" class="animate-pulse" /> <circle cx="35" cy="50" r="3" fill="#34d399" class="animate-pulse" />
+        </svg>
+       </div>
+       <div class="p-6"><span class="text-xs font-medium text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full">Office | Enterprise</span>
+        <h3 class="text-xl font-bold mt-3 mb-2" style="font-family: 'Outfit', sans-serif;">Access Points</h3>
+        <p class="text-gray-400 text-sm mb-4">Ceiling and wall-mounted APs for high-density environments and seamless coverage.</p>
+        <ul class="space-y-2 text-sm text-gray-300">
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>PoE Powered</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>200+ Devices</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Cloud Managed</li>
+        </ul>
+       </div>
+      </div><!-- Product Card 4 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-blue-900/50 to-blue-950/50 p-8 flex items-center justify-center">
+        <svg class="w-32 h-32 text-blue-400 group-hover:scale-110 transition-transform" viewbox="0 0 100 100" fill="none"><rect x="20" y="25" width="60" height="50" rx="4" stroke="currentColor" stroke-width="2" /> <line x1="25" y1="40" x2="75" y2="40" stroke="currentColor" stroke-width="1" opacity="0.5" /> <line x1="25" y1="55" x2="75" y2="55" stroke="currentColor" stroke-width="1" opacity="0.5" /> <circle cx="30" cy="33" r="3" fill="#34d399" class="animate-pulse" /> <circle cx="40" cy="33" r="3" fill="#34d399" class="animate-pulse" /> <circle cx="50" cy="33" r="3" fill="currentColor" class="animate-pulse" /> <rect x="28" y="45" width="8" height="6" rx="1" fill="currentColor" /> <rect x="40" y="45" width="8" height="6" rx="1" fill="currentColor" /> <rect x="52" y="45" width="8" height="6" rx="1" fill="currentColor" /> <rect x="64" y="45" width="8" height="6" rx="1" fill="currentColor" /> <rect x="28" y="60" width="8" height="6" rx="1" fill="currentColor" /> <rect x="40" y="60" width="8" height="6" rx="1" fill="currentColor" /> <rect x="52" y="60" width="8" height="6" rx="1" fill="currentColor" /> <rect x="64" y="60" width="8" height="6" rx="1" fill="currentColor" />
+        </svg>
+       </div>
+       <div class="p-6"><span class="text-xs font-medium text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full">Enterprise</span>
+        <h3 class="text-xl font-bold mt-3 mb-2" style="font-family: 'Outfit', sans-serif;">Network Switches</h3>
+        <p class="text-gray-400 text-sm mb-4">Managed and unmanaged switches with PoE+ support for enterprise networks.</p>
+        <ul class="space-y-2 text-sm text-gray-300">
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>8/16/24/48 Ports</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>PoE+ Support</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>VLAN Support</li>
+        </ul>
+       </div>
+      </div><!-- Product Card 5 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-blue-900/50 to-blue-950/50 p-8 flex items-center justify-center">
+        <svg class="w-32 h-32 text-blue-400 group-hover:scale-110 transition-transform" viewbox="0 0 100 100" fill="none"><path d="M20 50 L35 35 L80 35" stroke="currentColor" stroke-width="2" stroke-linecap="round" /> <path d="M20 50 L35 65 L80 65" stroke="currentColor" stroke-width="2" stroke-linecap="round" /> <circle cx="20" cy="50" r="8" stroke="currentColor" stroke-width="2" /> <circle cx="20" cy="50" r="3" fill="#34d399" class="animate-pulse" /> <rect x="75" y="30" width="10" height="10" rx="2" fill="currentColor" /> <rect x="75" y="60" width="10" height="10" rx="2" fill="currentColor" /> <circle cx="55" cy="35" r="4" fill="currentColor" opacity="0.5" /> <circle cx="55" cy="65" r="4" fill="currentColor" opacity="0.5" />
+        </svg>
+       </div>
+       <div class="p-6"><span class="text-xs font-medium text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full">All Segments</span>
+        <h3 class="text-xl font-bold mt-3 mb-2" style="font-family: 'Outfit', sans-serif;">Fiber &amp; Ethernet</h3>
+        <p class="text-gray-400 text-sm mb-4">Premium cables, connectors, and fiber optic equipment for backbone infrastructure.</p>
+        <ul class="space-y-2 text-sm text-gray-300">
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Cat6/Cat6a/Cat7</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Fiber Optic</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Media Converters</li>
+        </ul>
+       </div>
+      </div><!-- Product Card 6 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-blue-900/50 to-blue-950/50 p-8 flex items-center justify-center">
+        <svg class="w-32 h-32 text-blue-400 group-hover:scale-110 transition-transform" viewbox="0 0 100 100" fill="none"><rect x="25" y="20" width="50" height="60" rx="4" stroke="currentColor" stroke-width="2" /> <rect x="30" y="25" width="40" height="8" rx="2" fill="currentColor" opacity="0.3" /> <rect x="30" y="37" width="40" height="8" rx="2" fill="currentColor" opacity="0.3" /> <rect x="30" y="49" width="40" height="8" rx="2" fill="currentColor" opacity="0.3" /> <rect x="30" y="61" width="40" height="8" rx="2" fill="currentColor" opacity="0.3" /> <circle cx="35" cy="29" r="2" fill="#34d399" class="animate-pulse" /> <circle cx="35" cy="41" r="2" fill="#34d399" class="animate-pulse" /> <circle cx="35" cy="53" r="2" fill="currentColor" class="animate-pulse" /> <circle cx="35" cy="65" r="2" fill="#34d399" class="animate-pulse" />
+        </svg>
+       </div>
+       <div class="p-6"><span class="text-xs font-medium text-pink-400 bg-pink-500/10 px-3 py-1 rounded-full">Enterprise</span>
+        <h3 class="text-xl font-bold mt-3 mb-2" style="font-family: 'Outfit', sans-serif;">Server Racks &amp; Cabinets</h3>
+        <p class="text-gray-400 text-sm mb-4">Professional-grade racks, patch panels, and cable management solutions.</p>
+        <ul class="space-y-2 text-sm text-gray-300">
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>6U to 42U Options</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Patch Panels</li>
+         <li class="flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>Cable Management</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="text-center mt-12"><a href="#contact" class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-base font-semibold space-x-2"> <span>Request Product Catalog</span>
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+       </svg></a>
+     </div>
+    </div>
+   </section><!-- Services Section -->
+   <section id="services" class="py-20 lg:py-32 bg-gradient-to-b from-[#0f172a] to-[#0a0f1c] network-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="inline-flex items-center px-4 py-1.5 rounded-full glass text-xs font-medium text-blue-400 mb-4"> Professional Services </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style="font-family: 'Outfit', sans-serif;"><span class="text-white">Expert Installation &amp;</span> <span class="gradient-text"> Support</span></h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">From planning to deployment, our certified technicians deliver seamless network solutions.</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"><!-- Service 1 -->
+      <div class="glass-card rounded-2xl p-8 card-hover">
+       <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-6 glow">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Outfit', sans-serif;">Home &amp; Office WiFi</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">Complete WiFi installation for homes and small offices. Site survey, equipment selection, and professional setup included.</p>
+      </div><!-- Service 2 -->
+      <div class="glass-card rounded-2xl p-8 card-hover">
+       <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Outfit', sans-serif;">Enterprise Network Design</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">Custom network architecture for large organizations. Scalable, secure, and optimized for your business needs.</p>
+      </div><!-- Service 3 -->
+      <div class="glass-card rounded-2xl p-8 card-hover">
+       <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center mb-6">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Outfit', sans-serif;">Mesh WiFi Setup</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">Eliminate dead zones with professional mesh system installation. Seamless coverage throughout your entire property.</p>
+      </div><!-- Service 4 -->
+      <div class="glass-card rounded-2xl p-8 card-hover">
+       <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center mb-6">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Outfit', sans-serif;">Fiber Routing &amp; Termination</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">Expert fiber optic installation, splicing, and termination. High-speed backbone infrastructure for your network.</p>
+      </div><!-- Service 5 -->
+      <div class="glass-card rounded-2xl p-8 card-hover">
+       <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center mb-6">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Outfit', sans-serif;">Outdoor &amp; Long-Range WiFi</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">Point-to-point and point-to-multipoint solutions for campus, farms, and remote locations.</p>
+      </div><!-- Service 6 -->
+      <div class="glass-card rounded-2xl p-8 card-hover">
+       <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center mb-6">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Outfit', sans-serif;">Testing &amp; Maintenance</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">Network health checks, performance optimization, and ongoing support to keep your network running at peak performance.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Why Us Section -->
+   <section id="why-us" class="py-20 lg:py-32 bg-[#0a0f1c]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div><span class="inline-flex items-center px-4 py-1.5 rounded-full glass text-xs font-medium text-blue-400 mb-4"> Why Choose Us </span>
+       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style="font-family: 'Outfit', sans-serif;"><span class="text-white">Your Trusted</span> <span class="gradient-text"> Network Partner</span></h2>
+       <p class="text-gray-400 text-lg mb-10">With years of experience and hundreds of successful installations, we deliver premium connectivity solutions that exceed expectations.</p>
+       <div class="space-y-6">
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="text-lg font-semibold mb-1" style="font-family: 'Outfit', sans-serif;">Experienced Network Engineers</h3>
+          <p class="text-gray-400 text-sm">Certified professionals with deep expertise in enterprise networking and WiFi solutions.</p>
+         </div>
+        </div>
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="text-lg font-semibold mb-1" style="font-family: 'Outfit', sans-serif;">Clean, Secure Installations</h3>
+          <p class="text-gray-400 text-sm">Professional cable management and neat installations that look as good as they perform.</p>
+         </div>
+        </div>
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="text-lg font-semibold mb-1" style="font-family: 'Outfit', sans-serif;">Premium, Trusted Brands Only</h3>
+          <p class="text-gray-400 text-sm">We only work with enterprise-grade equipment from Ubiquiti, TP-Link, MikroTik, and Cisco.</p>
+         </div>
+        </div>
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="text-lg font-semibold mb-1" style="font-family: 'Outfit', sans-serif;">Strong Signal Guarantee</h3>
+          <p class="text-gray-400 text-sm">We guarantee optimal coverage and performance, or we'll fix it at no extra cost.</p>
+         </div>
+        </div>
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="text-lg font-semibold mb-1" style="font-family: 'Outfit', sans-serif;">Ongoing Technical Support</h3>
+          <p class="text-gray-400 text-sm">24/7 support and maintenance packages to keep your network running smoothly.</p>
+         </div>
+        </div>
+       </div>
+      </div><!-- Stats -->
+      <div class="grid grid-cols-2 gap-6">
+       <div class="glass-card rounded-2xl p-8 text-center card-hover">
+        <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2" style="font-family: 'Outfit', sans-serif;">
+         500+
+        </div>
+        <div class="text-gray-400 text-sm">
+         Projects Completed
+        </div>
+       </div>
+       <div class="glass-card rounded-2xl p-8 text-center card-hover">
+        <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2" style="font-family: 'Outfit', sans-serif;">
+         99%
+        </div>
+        <div class="text-gray-400 text-sm">
+         Client Satisfaction
+        </div>
+       </div>
+       <div class="glass-card rounded-2xl p-8 text-center card-hover">
+        <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2" style="font-family: 'Outfit', sans-serif;">
+         24/7
+        </div>
+        <div class="text-gray-400 text-sm">
+         Support Available
+        </div>
+       </div>
+       <div class="glass-card rounded-2xl p-8 text-center card-hover">
+        <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2" style="font-family: 'Outfit', sans-serif;">
+         5yr
+        </div>
+        <div class="text-gray-400 text-sm">
+         Industry Experience
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Projects Gallery -->
+   <section id="projects" class="py-20 lg:py-32 bg-gradient-to-b from-[#0a0f1c] to-[#0f172a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="inline-flex items-center px-4 py-1.5 rounded-full glass text-xs font-medium text-blue-400 mb-4"> Our Work </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style="font-family: 'Outfit', sans-serif;"><span class="text-white">Professional</span> <span class="gradient-text"> Installations</span></h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">A showcase of our clean, professional network installations across various industries.</p>
+     </div>
+     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Project 1 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-blue-900/50 to-blue-950/50 p-8 flex items-center justify-center relative overflow-hidden">
+        <svg class="w-full h-full text-blue-400/30" viewbox="0 0 200 150" fill="none"><rect x="20" y="20" width="160" height="110" rx="4" stroke="currentColor" stroke-width="1" /> <rect x="40" y="35" width="40" height="25" rx="2" fill="currentColor" opacity="0.5" /> <rect x="90" y="35" width="40" height="25" rx="2" fill="currentColor" opacity="0.5" /> <rect x="40" y="70" width="40" height="25" rx="2" fill="currentColor" opacity="0.5" /> <rect x="90" y="70" width="40" height="25" rx="2" fill="currentColor" opacity="0.5" /> <circle cx="145" cy="48" r="15" stroke="currentColor" stroke-width="1.5" /> <circle cx="145" cy="48" r="5" fill="#34d399" /> <line x1="145" y1="63" x2="145" y2="100" stroke="currentColor" stroke-width="1.5" />
+        </svg>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4"><span class="text-xs font-medium text-blue-400 bg-blue-500/20 px-3 py-1 rounded-full">Corporate Office</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-lg font-bold mb-2" style="font-family: 'Outfit', sans-serif;">Tech Startup HQ</h3>
+        <p class="text-gray-400 text-sm">Full mesh network deployment with 12 access points covering 3 floors.</p>
+       </div>
+      </div><!-- Project 2 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-purple-900/50 to-purple-950/50 p-8 flex items-center justify-center relative overflow-hidden">
+        <svg class="w-full h-full text-purple-400/30" viewbox="0 0 200 150" fill="none"><rect x="70" y="30" width="60" height="90" rx="4" stroke="currentColor" stroke-width="1.5" /> <rect x="75" y="35" width="50" height="10" rx="1" fill="currentColor" opacity="0.3" /> <rect x="75" y="50" width="50" height="10" rx="1" fill="currentColor" opacity="0.3" /> <rect x="75" y="65" width="50" height="10" rx="1" fill="currentColor" opacity="0.3" /> <rect x="75" y="80" width="50" height="10" rx="1" fill="currentColor" opacity="0.3" /> <rect x="75" y="95" width="50" height="10" rx="1" fill="currentColor" opacity="0.3" /> <circle cx="80" cy="40" r="2" fill="#34d399" /> <circle cx="80" cy="55" r="2" fill="#34d399" /> <circle cx="80" cy="70" r="2" fill="#34d399" /> <circle cx="80" cy="85" r="2" fill="#60a5fa" /> <circle cx="80" cy="100" r="2" fill="#34d399" /> <line x1="30" y1="55" x2="70" y2="55" stroke="currentColor" stroke-width="1" /> <line x1="130" y1="55" x2="170" y2="55" stroke="currentColor" stroke-width="1" />
+        </svg>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4"><span class="text-xs font-medium text-purple-400 bg-purple-500/20 px-3 py-1 rounded-full">Server Room</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-lg font-bold mb-2" style="font-family: 'Outfit', sans-serif;">Data Center Setup</h3>
+        <p class="text-gray-400 text-sm">Complete rack installation with structured cabling and redundant networking.</p>
+       </div>
+      </div><!-- Project 3 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-green-900/50 to-green-950/50 p-8 flex items-center justify-center relative overflow-hidden">
+        <svg class="w-full h-full text-green-400/30" viewbox="0 0 200 150" fill="none"><path d="M100 30 L180 70 L180 120 L100 80 L20 120 L20 70 Z" stroke="currentColor" stroke-width="1.5" fill="none" /> <line x1="100" y1="80" x2="100" y2="30" stroke="currentColor" stroke-width="1" /> <circle cx="50" cy="60" r="12" stroke="currentColor" stroke-width="1.5" /> <circle cx="50" cy="60" r="4" fill="#34d399" /> <circle cx="150" cy="60" r="12" stroke="currentColor" stroke-width="1.5" /> <circle cx="150" cy="60" r="4" fill="#34d399" /> <circle cx="100" cy="100" r="12" stroke="currentColor" stroke-width="1.5" /> <circle cx="100" cy="100" r="4" fill="#34d399" /> <path d="M50 72 Q 75 90 100 88" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,2" /> <path d="M150 72 Q 125 90 100 88" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,2" />
+        </svg>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4"><span class="text-xs font-medium text-green-400 bg-green-500/20 px-3 py-1 rounded-full">Hospitality</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-lg font-bold mb-2" style="font-family: 'Outfit', sans-serif;">Boutique Hotel</h3>
+        <p class="text-gray-400 text-sm">Seamless WiFi coverage across 50 rooms with captive portal integration.</p>
+       </div>
+      </div><!-- Project 4 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-orange-900/50 to-orange-950/50 p-8 flex items-center justify-center relative overflow-hidden">
+        <svg class="w-full h-full text-orange-400/30" viewbox="0 0 200 150" fill="none"><rect x="30" y="50" width="140" height="70" rx="4" stroke="currentColor" stroke-width="1.5" /> <rect x="40" y="60" width="30" height="20" rx="2" fill="currentColor" opacity="0.3" /> <rect x="85" y="60" width="30" height="20" rx="2" fill="currentColor" opacity="0.3" /> <rect x="130" y="60" width="30" height="20" rx="2" fill="currentColor" opacity="0.3" /> <circle cx="100" cy="35" r="15" stroke="currentColor" stroke-width="1.5" /> <circle cx="100" cy="35" r="5" fill="#34d399" /> <line x1="100" y1="50" x2="100" y2="60" stroke="currentColor" stroke-width="1" /> <rect x="45" y="90" width="20" height="25" rx="1" fill="currentColor" opacity="0.2" /> <rect x="90" y="90" width="20" height="25" rx="1" fill="currentColor" opacity="0.2" /> <rect x="135" y="90" width="20" height="25" rx="1" fill="currentColor" opacity="0.2" />
+        </svg>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4"><span class="text-xs font-medium text-orange-400 bg-orange-500/20 px-3 py-1 rounded-full">Education</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-lg font-bold mb-2" style="font-family: 'Outfit', sans-serif;">University Campus</h3>
+        <p class="text-gray-400 text-sm">Campus-wide WiFi network supporting 5,000+ concurrent users.</p>
+       </div>
+      </div><!-- Project 5 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-cyan-900/50 to-cyan-950/50 p-8 flex items-center justify-center relative overflow-hidden">
+        <svg class="w-full h-full text-cyan-400/30" viewbox="0 0 200 150" fill="none"><rect x="40" y="60" width="120" height="60" rx="4" stroke="currentColor" stroke-width="1.5" /> <circle cx="60" cy="90" r="15" stroke="currentColor" stroke-width="1" /> <circle cx="100" cy="90" r="15" stroke="currentColor" stroke-width="1" /> <circle cx="140" cy="90" r="15" stroke="currentColor" stroke-width="1" /> <circle cx="60" cy="90" r="5" fill="#34d399" /> <circle cx="100" cy="90" r="5" fill="#60a5fa" /> <circle cx="140" cy="90" r="5" fill="#34d399" /> <line x1="60" y1="60" x2="60" y2="40" stroke="currentColor" stroke-width="1" /> <line x1="100" y1="60" x2="100" y2="35" stroke="currentColor" stroke-width="1" /> <line x1="140" y1="60" x2="140" y2="40" stroke="currentColor" stroke-width="1" /> <circle cx="60" cy="35" r="5" fill="currentColor" opacity="0.5" /> <circle cx="100" cy="30" r="5" fill="currentColor" opacity="0.5" /> <circle cx="140" cy="35" r="5" fill="currentColor" opacity="0.5" />
+        </svg>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4"><span class="text-xs font-medium text-cyan-400 bg-cyan-500/20 px-3 py-1 rounded-full">Retail</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-lg font-bold mb-2" style="font-family: 'Outfit', sans-serif;">Shopping Mall</h3>
+        <p class="text-gray-400 text-sm">Multi-tenant WiFi solution with guest access and analytics.</p>
+       </div>
+      </div><!-- Project 6 -->
+      <div class="glass-card rounded-2xl overflow-hidden card-hover group">
+       <div class="aspect-[4/3] bg-gradient-to-br from-pink-900/50 to-pink-950/50 p-8 flex items-center justify-center relative overflow-hidden">
+        <svg class="w-full h-full text-pink-400/30" viewbox="0 0 200 150" fill="none"><path d="M40 110 L40 50 L100 20 L160 50 L160 110" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="70" y="70" width="60" height="40" rx="2" stroke="currentColor" stroke-width="1" /> <rect x="85" y="80" width="30" height="30" rx="1" fill="currentColor" opacity="0.2" /> <circle cx="100" cy="45" r="12" stroke="currentColor" stroke-width="1.5" /> <circle cx="100" cy="45" r="4" fill="#34d399" /> <path d="M100 57 L100 70" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2" /> <circle cx="55" cy="80" r="8" stroke="currentColor" stroke-width="1" /> <circle cx="145" cy="80" r="8" stroke="currentColor" stroke-width="1" />
+        </svg>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4"><span class="text-xs font-medium text-pink-400 bg-pink-500/20 px-3 py-1 rounded-full">Residential</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-lg font-bold mb-2" style="font-family: 'Outfit', sans-serif;">Luxury Villa</h3>
+        <p class="text-gray-400 text-sm">Smart home integration with outdoor coverage and automated systems.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Testimonials -->
+   <section class="py-20 lg:py-32 bg-[#0f172a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="inline-flex items-center px-4 py-1.5 rounded-full glass text-xs font-medium text-blue-400 mb-4"> Client Testimonials </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style="font-family: 'Outfit', sans-serif;"><span class="text-white">What Our</span> <span class="gradient-text"> Clients Say</span></h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <div class="glass-card rounded-2xl p-8 card-hover">
+       <div class="flex items-center mb-4">
+        <div class="flex text-yellow-400">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+        </div>
+       </div>
+    <p class="text-gray-300 text-sm mb-6 leading-relaxed">"CPLINKTECH SOLUTIONS transformed our office connectivity. The installation was clean, professional, and our network has been rock-solid ever since. Highly recommend!"</p>
+       <div class="flex items-center">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-bold">
+         JM
+        </div>
+        <div class="ml-3">
+         <div class="font-semibold text-sm">
+          James Mwangi
+         </div>
+         <div class="text-gray-500 text-xs">
+          CEO, TechStart Kenya
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-8 card-hover">
+       <div class="flex items-center mb-4">
+        <div class="flex text-yellow-400">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+        </div>
+       </div>
+    <p class="text-gray-300 text-sm mb-6 leading-relaxed">"We needed full WiFi coverage for our hotel guests. CPLINKTECH SOLUTIONS delivered beyond expectations - fast, reliable, and the support has been exceptional."</p>
+       <div class="flex items-center">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white font-bold">
+         SA
+        </div>
+        <div class="ml-3">
+         <div class="font-semibold text-sm">
+          Sarah Achieng
+         </div>
+         <div class="text-gray-500 text-xs">
+          Manager, Riverside Hotel
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-8 card-hover">
+       <div class="flex items-center mb-4">
+        <div class="flex text-yellow-400">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+        </div>
+       </div>
+    <p class="text-gray-300 text-sm mb-6 leading-relaxed">"Our school needed a reliable network for online learning. CPLINKTECH SOLUTIONS set up everything perfectly - the cable work is impeccable and speeds are amazing."</p>
+       <div class="flex items-center">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white font-bold">
+         PO
+        </div>
+        <div class="ml-3">
+         <div class="font-semibold text-sm">
+          Peter Odhiambo
+         </div>
+         <div class="text-gray-500 text-xs">
+          Principal, Greenfield Academy
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-20 lg:py-32 bg-gradient-to-b from-[#0f172a] to-[#0a0f1c] network-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+      <div><span class="inline-flex items-center px-4 py-1.5 rounded-full glass text-xs font-medium text-blue-400 mb-4"> Get In Touch </span>
+       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style="font-family: 'Outfit', sans-serif;"><span class="text-white">Request a</span> <span class="gradient-text"> Consultation</span></h2>
+       <p class="text-gray-400 text-lg mb-10">Ready to upgrade your network? Get in touch with our team for a free site survey and personalized quote.</p>
+       <div class="space-y-6 mb-10">
+        <div class="flex items-center space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+         </div>
+         <div>
+                 <div class="text-sm text-gray-500">
+                     Phone
+                    </div><a id="contact-phone" href="tel:+254710241295" class="font-semibold hover:text-blue-400 transition-colors">+254 710 241 295</a>
+         </div>
+        </div>
+        <div class="flex items-center space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-green-400" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+         </div>
+         <div>
+                 <div class="text-sm text-gray-500">
+                     WhatsApp
+                    </div><a href="https://wa.me/254710241295" target="_blank" rel="noopener noreferrer" class="font-semibold hover:text-green-400 transition-colors">Chat with us</a>
+         </div>
+        </div>
+        <div class="flex items-center space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+         </div>
+         <div>
+                 <div class="text-sm text-gray-500">
+                     Email
+                    </div><a id="contact-email" href="mailto:edisonkipkemoi319@gmail.com" class="font-semibold hover:text-purple-400 transition-colors">edisonkipkemoi319@gmail.com</a>
+         </div>
+        </div>
+        <div class="flex items-center space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+         </div>
+         <div>
+          <div class="text-sm text-gray-500">
+           Location
+          </div><span class="font-semibold">Nairobi, Kenya</span>
+         </div>
+        </div>
+        <div class="flex items-center space-x-4">
+         <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+         </div>
+         <div>
+          <div class="text-sm text-gray-500">
+           Business Hours
+          </div><span class="font-semibold">Mon - Sat: 8:00 AM - 6:00 PM</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Contact Form -->
+      <div class="glass-card rounded-2xl p-8">
+       <form id="contact-form" class="space-y-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+         <div><label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors" placeholder="John Doe">
+         </div>
+         <div><label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label> <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors" placeholder="+254 700 000 000">
+         </div>
+        </div>
+        <div><label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors" placeholder="john@example.com">
+        </div>
+        <div><label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Required</label> <select id="service" name="service" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-blue-500 transition-colors"> <option value="" class="bg-[#0f172a]">Select a service</option> <option value="home-wifi" class="bg-[#0f172a]">Home WiFi Installation</option> <option value="office-wifi" class="bg-[#0f172a]">Office WiFi Installation</option> <option value="enterprise" class="bg-[#0f172a]">Enterprise Network Design</option> <option value="mesh" class="bg-[#0f172a]">Mesh WiFi Setup</option> <option value="fiber" class="bg-[#0f172a]">Fiber Routing</option> <option value="outdoor" class="bg-[#0f172a]">Outdoor WiFi</option> <option value="maintenance" class="bg-[#0f172a]">Maintenance &amp; Support</option> <option value="products" class="bg-[#0f172a]">Product Purchase</option> <option value="other" class="bg-[#0f172a]">Other</option> </select>
+        </div>
+        <div><label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label> <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors resize-none" placeholder="Tell us about your project..."></textarea>
+        </div><button type="submit" class="w-full btn-primary py-4 rounded-xl font-semibold flex items-center justify-center space-x-2"> <span>Send Message</span>
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+         </svg></button>
+       </form><!-- Success Message -->
+       <div id="form-success" class="hidden text-center py-12">
+        <div class="w-16 h-16 mx-auto rounded-full bg-green-500/20 flex items-center justify-center mb-4">
+         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Message Sent!</h3>
+        <p class="text-gray-400">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 bg-[#0a0f1c] border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div class="md:col-span-2">
+       <div class="flex items-center space-x-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+         </svg>
+        </div><span id="footer-company-name" class="text-xl font-bold" style="font-family: 'Outfit', sans-serif;">CPLINKTECH SOLUTIONS</span>
+       </div>
+       <p class="text-gray-400 text-sm max-w-md">Premium WiFi equipment, professional installation, and enterprise-grade network solutions for homes, offices, and organizations.</p>
+      </div>
+      <div>
+       <h4 class="font-semibold mb-4">Quick Links</h4>
+       <ul class="space-y-2 text-sm text-gray-400">
+        <li><a href="#products" class="hover:text-white transition-colors">Products</a></li>
+        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+        <li><a href="#why-us" class="hover:text-white transition-colors">Why Us</a></li>
+        <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
+        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+       </ul>
+      </div>
+      <div>
+       <h4 class="font-semibold mb-4">Services</h4>
+       <ul class="space-y-2 text-sm text-gray-400">
+        <li>Home WiFi Installation</li>
+        <li>Enterprise Networks</li>
+        <li>Mesh WiFi Setup</li>
+        <li>Fiber Routing</li>
+        <li>Network Maintenance</li>
+       </ul>
+      </div>
+     </div>
+     <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between">
+    <p class="text-gray-500 text-sm">© 2024 CPLINKTECH SOLUTIONS. All rights reserved.</p>
+            <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                <a href="#" aria-label="X (Twitter)" class="w-10 h-10 rounded-lg glass flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 3l18 18" opacity="0" />
+                        <path d="M7 5l10 14M17 5L7 19" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-lg glass flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.99H7.898v-2.888h2.54V9.413c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.56v1.874h2.773l-.443 2.888h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-lg glass flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.78v2.2h.07c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 6 3.33 6 7.66V24h-5V15.5c0-2.03-.04-4.64-2.83-4.64-2.83 0-3.26 2.21-3.26 4.5V24h-5V8z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-lg glass flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm8 4a1 1 0 110 2 1 1 0 010-2zm-4 2.5A4.5 4.5 0 1015.5 13 4.505 4.505 0 0011 8.5zM11 14.5A3.5 3.5 0 1114.5 11 3.504 3.504 0 0111 14.5z"/>
+                    </svg>
+                </a>
+            </div>
+      </div>
+     </div>
+    </div>
+    </footer><!-- WhatsApp Float Button --> <a href="https://wa.me/254710241295" target="_blank" rel="noopener noreferrer" class="whatsapp-float w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-600 transition-colors">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg></a>
+  </div>
+    <!-- Cart & Inquiry Modals -->
+    <div id="cart-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close" id="close-cart">×</button>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-footer" style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;">
+                <div>Total: <span id="cart-total">$0.00</span></div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <button id="send-inquiry-btn" class="primary">Send Inquiry via WhatsApp</button>
+                    <button id="checkout-btn" class="primary">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close" id="close-checkout">×</button>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <label>Name <input name="name" required></label>
+                <label>Email <input name="email" type="email" required></label>
+                <div class="checkout-actions">
+                    <button type="submit" class="primary">Pay / Place Order</button>
+                </div>
+            </form>
+            <div id="checkout-note" class="checkout-note">Payments: simulated locally. To enable real payments, add the optional Node/Stripe backend (see README).</div>
+        </div>
+    </div>
+
+    <div id="order-confirm" class="modal hidden">
+        <div class="modal-content">
+            <h2>Order Confirmed</h2>
+            <p id="order-message">Thank you — your order was placed.</p>
+            <button id="close-order" class="primary">Close</button>
+        </div>
+    </div>
+
+    <script>
+                // Default configuration
+        const defaultConfig = {
+            hero_headline: "Reliable Connectivity. Premium Network Solutions.",
+            hero_subheadline: "Expert WiFi equipment, professional installation, and seamless coverage for homes, offices, and enterprises.",
+            company_name: "CPLINKTECH SOLUTIONS",
+            phone_number: "+254 700 000 000",
+            email_address: "edisonkipkemoi319@gmail.com",
+            background_color: "#0a0f1c",
+            surface_color: "#0f172a",
+            text_color: "#ffffff",
+            primary_color: "#3b82f6",
+            accent_color: "#60a5fa"
+        };
+        
+        let config = { ...defaultConfig };
+        
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange: async (newConfig) => {
+                    config = { ...defaultConfig, ...newConfig };
+                    
+                    // Update hero headline
+                    const heroHeadline = document.getElementById('hero-headline');
+                    if (heroHeadline && config.hero_headline) {
+                        const parts = config.hero_headline.split('.');
+                        heroHeadline.innerHTML = `<span class="text-white">${parts[0]}.</span><br><span class="gradient-text">${parts.slice(1).join('.').trim() || 'Premium Network Solutions.'}</span>`;
+                    }
+                    
+                    // Update hero subheadline
+                    const heroSubheadline = document.getElementById('hero-subheadline');
+                    if (heroSubheadline) {
+                        heroSubheadline.textContent = config.hero_subheadline || defaultConfig.hero_subheadline;
+                    }
+                    
+                    // Update company names
+                    const navCompanyName = document.getElementById('nav-company-name');
+                    if (navCompanyName) {
+                        navCompanyName.textContent = config.company_name?.split(' ')[0] || 'CPLINKTECH';
+                    }
+                    
+                    const footerCompanyName = document.getElementById('footer-company-name');
+                    if (footerCompanyName) {
+                        footerCompanyName.textContent = config.company_name || defaultConfig.company_name;
+                    }
+                    
+                    // Update contact info
+                    const contactPhone = document.getElementById('contact-phone');
+                    if (contactPhone) {
+                        contactPhone.textContent = config.phone_number || defaultConfig.phone_number;
+                        contactPhone.href = `tel:${(config.phone_number || defaultConfig.phone_number).replace(/\s/g, '')}`;
+                    }
+                    
+                    const contactEmail = document.getElementById('contact-email');
+                    if (contactEmail) {
+                        contactEmail.textContent = config.email_address || defaultConfig.email_address;
+                        contactEmail.href = `mailto:${config.email_address || defaultConfig.email_address}`;
+                    }
+                    
+                    // Update colors
+                    document.documentElement.style.setProperty('--bg-color', config.background_color || defaultConfig.background_color);
+                    document.documentElement.style.setProperty('--surface-color', config.surface_color || defaultConfig.surface_color);
+                    document.documentElement.style.setProperty('--text-color', config.text_color || defaultConfig.text_color);
+                    document.documentElement.style.setProperty('--primary-color', config.primary_color || defaultConfig.primary_color);
+                    document.documentElement.style.setProperty('--accent-color', config.accent_color || defaultConfig.accent_color);
+                },
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.surface_color || defaultConfig.surface_color,
+                            set: (value) => {
+                                config.surface_color = value;
+                                window.elementSdk.setConfig({ surface_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.primary_color || defaultConfig.primary_color,
+                            set: (value) => {
+                                config.primary_color = value;
+                                window.elementSdk.setConfig({ primary_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.accent_color || defaultConfig.accent_color,
+                            set: (value) => {
+                                config.accent_color = value;
+                                window.elementSdk.setConfig({ accent_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
+                    ["hero_subheadline", config.hero_subheadline || defaultConfig.hero_subheadline],
+                    ["company_name", config.company_name || defaultConfig.company_name],
+                    ["phone_number", config.phone_number || defaultConfig.phone_number],
+                    ["email_address", config.email_address || defaultConfig.email_address]
+                ])
+            });
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const appWrapper = document.getElementById('app-wrapper');
+        
+        appWrapper.addEventListener('scroll', () => {
+            if (appWrapper.scrollTop > 50) {
+                navbar.classList.add('bg-[#0a0f1c]/90');
+            } else {
+                navbar.classList.remove('bg-[#0a0f1c]/90');
+            }
+        });
+        
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate form submission</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c9127e817378a40',t:'MTc3MDI4MTM4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+    <!-- Photo Gallery -->
+    <section id="gallery" class="py-12 bg-[#0f172a]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold" style="font-family: 'Outfit', sans-serif;">Photo Gallery</h2>
+                <p class="text-gray-400">Images from the assets/photos folder.</p>
+            </div>
+            <div id="photo-profiles" class="flex items-center justify-center gap-6 mb-6"></div>
+            <div id="photo-gallery" class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+        </div>
+    </section>
+
+    <script>
+        // Inline fallback list so gallery works without a server
+        window.__PHOTO_LIST = [
+          "cplink (10).png","cplink (11).png","cplink (12).png","cplink (14).png","cplink (15).png",
+          "cplink (16).png","cplink (17).png","cplink (18).png","cplink (19).png","cplink (2).png",
+          "cplink (3).png","cplink (4).png","cplink (5).png","cplink (6).png","cplink (7).png",
+          "cplink (8).png","cplink (9).png","profile.png","profile2.png"
+        ];
+
+        (function(){
+            async function tryFetch(url){
+                try{
+                    const res = await fetch(url);
+                    if(!res.ok) return null;
+                    return await res.json();
+                }catch(e){
+                    return null;
+                }
+            }
+
+            async function loadPhotos(){
+                const gallery = document.getElementById('photo-gallery');
+                if(!gallery) return;
+
+                // 1) Try server endpoint (if user runs Node server)
+                let photos = await tryFetch('/photos');
+
+                // 2) Try local JSON file (works when served or some file setups)
+                if(!photos) photos = await tryFetch('./assets/photos/photos.json');
+
+                // 3) Fallback to inline list
+                if(!photos || photos.length === 0) photos = window.__PHOTO_LIST || [];
+
+                if(!photos || photos.length === 0){
+                    gallery.innerHTML = '<p class="text-gray-400">No photos found in assets/photos.</p>';
+                    return;
+                }
+
+                // Render profile images separately, then the rest
+                const profilesDiv = document.getElementById('photo-profiles');
+                const profileImgs = photos.filter(p => /profile/i.test(p));
+                const otherImgs = photos.filter(p => !/profile/i.test(p));
+
+                if(profileImgs.length && profilesDiv){
+                    profileImgs.forEach(fname=>{
+                        const b = document.createElement('div');
+                        b.className = 'flex flex-col items-center';
+                        const im = document.createElement('img');
+                        im.src = 'assets/photos/' + encodeURIComponent(fname);
+                        im.alt = fname;
+                        im.className = 'rounded-full w-24 h-24 object-cover border-2 border-white/10';
+                        const label = document.createElement('div');
+                        label.className = 'text-xs text-gray-300 mt-2';
+                        label.textContent = fname.replace(/\.[^.]+$/, '');
+                        b.appendChild(im);
+                        b.appendChild(label);
+                        profilesDiv.appendChild(b);
+                    });
+                }
+
+                otherImgs.forEach(fname=>{
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'overflow-hidden rounded-lg';
+                    const img = document.createElement('img');
+                    img.src = 'assets/photos/' + encodeURIComponent(fname);
+                    img.alt = fname;
+                    img.className = 'w-full h-48 object-cover block';
+                    wrapper.appendChild(img);
+                    gallery.appendChild(wrapper);
+                });
+            }
+
+            if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', loadPhotos);
+            else loadPhotos();
+        })();
+    </script>
+</body>
+</html>
